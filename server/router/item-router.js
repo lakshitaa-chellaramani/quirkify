@@ -17,6 +17,6 @@ router.route('/menu/maincourse/filter').post(authMiddleware, menuItems.getMainco
 router.route('/menu/quickbite/filter').post(authMiddleware, menuItems.getQuickbitesFilter)
 router.route('/menu/dessert/filter').post(authMiddleware, menuItems.getDessertFilter)
 
-router.route('/getItems').get(authMiddleware, getAllItems)
+router.route('/getItems').get( getAllItems)
 
 module.exports = router

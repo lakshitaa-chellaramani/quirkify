@@ -14,6 +14,10 @@ import FeedbackForm from './Components/FeedBackForm';
 import Testimonials from './Components/Testimonials';
 import MoodModal from './Components/Modals/MoodModal';
 import ProductCard from './Components/Modals/MoodModa';
+import Modalcom from './Components/EventCalendar/Modalcom';
+import Calender from './Components/EventCalendar/Calender';
+import LoginSignUp from './Components/Welcome/LoginSignUp';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,12 +26,13 @@ function App() {
   
       <Router>
       <Navbar />
-      <CardGenerator/>
-      <ProductCard/>
+      
         <Routes>
           <Route path='/' element={<Hero/>}/>
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/login" element={<LoginSignUp/> }/>
+          
 
         </Routes>
       </Router>

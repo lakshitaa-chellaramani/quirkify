@@ -15,5 +15,5 @@ export default {
       },
     },
   },
-  plugins: [ require('daisyui'),],
+  plugins: [ require('daisyui',"tw-elements-react/dist/plugin.cjs"),],
 }
