@@ -14,6 +14,8 @@ import FeedbackForm from './Components/FeedBackForm';
 import Testimonials from './Components/Testimonials';
 import MoodModal from './Components/Modals/MoodModal';
 import ProductCard from './Components/Modals/MoodModa';
+import Location from './Components/Location';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +30,8 @@ function App() {
           <Route path='/' element={<Hero/>}/>
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/veg" element={<Vegb />} />
 
         </Routes>
       </Router>
