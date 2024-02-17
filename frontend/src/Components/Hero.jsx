@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import foodtruck from "./Animations/foodtruck.json";
 
 const Hero = () => {
         const [countdown, setCountdown] = useState(10);
@@ -17,22 +19,22 @@ const Hero = () => {
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
-                Lovin' it? Get it now!
+                The Mobile Food Hub!
                 <div className="relative inline-flex">
                   <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#FFC72C]"></span>
                   <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
-                    McDonald's.
+                    Quirkify.
                   </h1>
                 </div>
               </h1>
 
               <p className="mt-8 text-base text-black sm:text-xl">
                 Fire up the app, tap your order, and savor the taste of
-                McDonald's in minutes. Your favorites, faster than ever.
+                Quirkify in minutes. Your favorites, faster than ever.
               </p>
 
               <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
-                <a
+                <button><a
                   href="#"
                   title=""
                   className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-[#DA291C] hover:bg-[#e72e2e] rounded-[10px]"
@@ -40,7 +42,7 @@ const Hero = () => {
                 >
                   {" "}
                   Start exploring{" "}
-                </a>
+                </a></button>
                 <span className="text-[#DA291C] text-sm ml-4">
         {countdown} seconds left to get a special offer!
       </span>
@@ -48,11 +50,10 @@ const Hero = () => {
             </div>
 
             <div>
-              <img
-                className="relative -right-20 w-full "
-                src="src/assets/foodtruck.png"
-                alt=""
-              />
+            <Lottie
+            animationData={foodtruck}
+            className="relative w-full  mt-6 h-48  lg:h-[68vh] lg:object-cover"
+          />
             </div>
           </div>
         </div>
