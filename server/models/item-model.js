@@ -9,9 +9,8 @@ const ItemSchema = new Schema({
     itemMood: { type: String, required: true }, //
     itemCalories: { type: Number, required: true, default : -1 },
     itemDesc: { type: String, required: true }, //
-    itemImage: { type: Image, required: true },
+    itemImage: { type: String, required: true },
     itemCookingTime: { type: String, required: true },
-    isJain: { type: Boolean, required: true }
 })
 
 const Item = new model("items", ItemSchema)

@@ -8,6 +8,10 @@ import { UserCard } from './Components/UserCard'
 import Hero from './Components/Hero'
 import LocationMap from './Components/LocationMap'
 import Admin from './Components/Admin'
+import CardGenerator from './Components/MenuPage/CardGenerator'
+import HomeProductCards from './Components/HomPageCards/HomeProductCards'
+import Dashboard from './Components/Menu/Asides'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,9 +21,12 @@ function App() {
       {/* <Nabvar/>
       <Hero/>
       <LocationMap/> */}
-      <Nabvar/>
-      <Admin></Admin>
+      {/* <Nabvar/>
+      <Admin></Admin> */}
       {/* <UserCard/> */}
+      
+      <Dashboard/>
+     
     </>
   )
 }

@@ -2,12 +2,13 @@ const { Schema, model } = require('mongoose')
 
 const orderSchema = new Schema({
     orderId: { type: String, required: true },
+    orderItem: [String],
     orderPrice: { type: Number, required: true },
-    pickedUp: { type: Boolean, required: true },
-    isReady: { type: Boolean, required: true },
-    deliveryTime: {type: Date, required: false}
+    pickedUp: { type: Boolean, default: false },
+    isReady: { type: Boolean, default: false },
+    deliveryTime: { type: Date }
 })
 
 const Order = new model("orders", orderSchema)
 
-module.exports = Item
+module.exports = Order

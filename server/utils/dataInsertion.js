@@ -1,71 +1,43 @@
 const mongoose = require('mongoose');
 
-const url = "mongodb+srv://yashloriya0206:Yash0206@cluster0.u6icnjq.mongodb.net/quirkify?retryWrites=true&w=majority";
+const uri = "mongodb+srv://yashloriya0206:Yash0206@cluster0.u6icnjq.mongodb.net/quirkify?retryWrites=true&w=majority";
 
+const ItemSchema = new mongoose.Schema({
+    itemName: { type: String, required: true }, //
+    itemPrice: { type: Number, required: true }, //
+    itemCategory: { type: String, required: true }, // Veg / Non-Veg
+    itemSubCategory: { type: String, required: true }, // Desert / Main / Starters / Quick-Bites
+    noOfOrders: { type: Number, required: true }, //
+    itemMood: { type: String, required: true }, //
+    itemCalories: { type: Number, required: true, default: -1 },
+    itemDesc: { type: String, required: true }, //
+    itemImage: { type: String, required: true },
+    itemCookingTime: { type: String, required: true }
+})
 
-const serviceSchema = new mongoose.Schema({
-    service: String,
-    description: String,
-    price: String,
-    provider: String
-});
+const Item = new mongoose.model("items", ItemSchema)
 
-const data = [
-    {
-        "service": "Web Development",
-        "description": "Crafting tailor-made websites and web applications.",
-        "price": "$1,500 - $7,000",
-        "provider": "Thapa Technical Youtube Inc."
-    },
-    {
-
-        "service": "E-commerce Website Development",
-        "description": "Building powerful e-commerce websites for your business.",
-        "price": "$2,000 - $8,000",
-        "provider": "Thapa Technical Youtubec."
-    },
-    {
-        "service": "Responsive Web Design",
-        "description": "Creating visually stunning and responsive websites.",
-        "price": "$1,200 - $6,000",
-        "provider": "Thapa Technical Youtube."
-    },
-    {
-
-        "service": "Mobile App Development",
-        "description": "Developing innovative and user - friendly mobile applications.",
-        "price": "$2,500 - $10,000",
-        "provider": "Thapa Technical Youtube."
-    },
-    {
-
-        "service": "WordPress Website Development",
-        "description": "Building dynamic websites using the WordPress platform.",
-        "price": "$1,300 - $5,500",
-        "provider": "Thapa Technical Youtube"
-    },
-    {
-
-        "service": "UI/UX Design Services",
-        "description": "Crafting intuitive and user - centric UI / UX designs for your projects.",
-        "price": "$1,800 - $7,500",
-        "provider": "Thapa Technical Youtube."
+async function inserItem() {
+    try {
+        await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log('Connected to MongoDB');
+        const newItem = new Item({
+            itemName: "Garlic Bread",
+            itemPrice: 89,
+            itemCategory: 'veg',
+            itemSubCategory: 'starters',
+            noOfOrders: 0,
+            itemMood: 'Happy',
+            itemDesc: 'Stuffed Garlic Bread with extra dipped cheese.',
+            itemImage: 'https://wallpaperaccess.com/full/3601449.jpg',
+            itemCookingTime: '1',
+        })
+        await newItem.save();
+        console.log("Inserted Successfully.")
     }
-]
+    catch (error) {
+        console.error('Error fetching product information:', error);
+    }
+}
 
-const Service = mongoose.model('services', serviceSchema);
-
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const newServices = data.map(item => new Service(item));
-
-Service.insertMany(newServices)
-  .then(result => {
-    console.log('Documents Inserted Successfully.');
-  })
-  .catch(error => {
-    console.error('Error inserting documents:', error);
-  })
-  .finally(() => {
-    mongoose.connection.close();
-  });
+inserItem();
