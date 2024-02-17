@@ -1,4 +1,6 @@
 import React from 'react'
+import AdminUser from './AdminUser'
+import AdminOrder from './AdminOrder'
 
 const Admin = () => {
   return (
@@ -9,6 +11,12 @@ const Admin = () => {
             <button className='adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'>Feedbacks</button>
             <button className='adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'>Analytics</button>
         </div>
+
+        <div className="adminContent">
+          <AdminUser></AdminUser>
+          <AdminOrder></AdminOrder>
+        </div>
+        {/* user item price picked-up ready pickup-time */}
     </div>
   )
 }

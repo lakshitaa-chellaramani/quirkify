@@ -2,7 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Nabvar from './Components/Navbar'
+import Navbar from './Components/Navbar'
+import Nabvar from './Components/Nabvar'
+import { UserCard } from './Components/UserCard'
 import Hero from './Components/Hero'
 import LocationMap from './Components/LocationMap'
 import Admin from './Components/Admin'
@@ -17,7 +19,7 @@ function App() {
       <LocationMap/> */}
       <Nabvar/>
       <Admin></Admin>
-     
+      {/* <UserCard/> */}
     </>
   )
 }

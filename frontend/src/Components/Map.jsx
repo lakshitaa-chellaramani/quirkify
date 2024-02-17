@@ -3,20 +3,19 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
-// Import your custom marker icon
-import customMarker from '../assets/pin.gif'; // Adjust the path based on your file structure
-
 const Map = () => {
   const mapStyles = {
     width: '100%',
     height: '400px',
+    borderRadius: '10px', // Add border-radius directly
+    overflow: 'hidden',
   };
 
   const initialLocation = [40.7128, -74.0060]; // Replace with your coordinates
 
   // Define a custom marker icon
   const customIcon = new L.Icon({
-    iconUrl: customMarker,
+    iconUrl: 'blob:https://lordicon.com/664ee8b8-fa67-4bd8-b5fa-d9ca1951fc2d', // Replace with your marker's path
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32],

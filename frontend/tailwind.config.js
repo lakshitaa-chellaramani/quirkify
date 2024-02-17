@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js"
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -12,9 +12,9 @@ export default {
         lightblue : '#B8B8FF',
         babypink : '#FFEEDD',
         pink : '#FFD8BE',
-        lavender : '#FFD8BE',
+        lavender : '#9381FF',
       },
     },
   },
-  plugins: [ require('daisyui'), require('flowbite/plugin')],
+  plugins: [ require('daisyui'), require('flowbite/plugin'),],
 }

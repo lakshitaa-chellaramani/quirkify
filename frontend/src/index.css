@@ -23,6 +23,7 @@ body {
 body {
     outline: solid;
     background: #EDF6F9;
+    background: #F8F7FF;
 
     font-family: "Oswald", sans-serif;
 }
@@ -51,4 +52,44 @@ body {
         transform: skewY(35deg) translateY(0);
         outline: solid #9381FF;
     }
+}
+
+.admin_container2 {
+    width: min(1024px, 100% - 1rem);
+    margin-inline: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    color: white;
+
+    margin: 20px auto;
+    background: #323232;
+    border-collapse: collapse;
+}
+
+caption, th, td {
+    padding: 0.25rem ;
+    text-align: left;
+}
+
+th,td {
+    font-size: 1.25rem;
+}
+
+tr:nth-child(even) {
+    background-color: hsl(0 0% 0% / 0.1);
+}
+
+caption {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+table button {
+    padding: 0.5rem 1rem;
+    background: hsl(0 0% 50%);
+    border-radius: 1rem;
 }
