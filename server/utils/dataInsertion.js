@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = "mongodb+srv://yashloriya0206:Yash0206@cluster0.u6icnjq.mongodb.net/mern_admin?retryWrites=true&w=majority";
+const url = "mongodb+srv://yashloriya0206:Yash0206@cluster0.u6icnjq.mongodb.net/quirkify?retryWrites=true&w=majority";
 
 
 const serviceSchema = new mongoose.Schema({
