@@ -12,8 +12,8 @@ import CardGenerator from './Components/MenuPage/CardGenerator'
 import HomeProductCards from './Components/HomPageCards/HomeProductCards'
 import Dashboard from './Components/Menu/Asides'
 
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import OurTable from './Components/Screens/OurTable'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +25,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Hero/>}/>
           <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/Menu" element={<OurTable/>} />
         </Routes>
       </Router>
     </>

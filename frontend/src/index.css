@@ -91,3 +91,118 @@ table button {
     background: hsl(0 0% 50%);
     border-radius: 1rem;
 }
+
+.tableWrapper {
+    background: url(./assets/tableTwo.jpg);
+    width: min(960px,100% - 4rem);
+    aspect-ratio: 1/2;
+    padding: 2rem 6rem;
+    border-radius: 0.25rem;
+    /* outline: solid; */
+    margin: 2rem auto;
+}
+.tableCloth {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(./assets/cloth.avif);
+
+    /* box-shadow: 0 0 1rem hsl(0 0% 90%); */
+    
+}
+
+.tableCloth > * {
+    /* outline: solid; */
+
+    position: absolute;
+    aspect-ratio: 1;
+    filter: drop-shadow(0 0 0.5rem hsl(0 0% 40%));
+    background-position: 0 0;
+    display: grid;
+    place-items: center;
+
+    transition: scale 0.5s ease;
+}
+.tableCloth > *::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    backdrop-filter: brightness(1);
+
+    transition: all 0.5s ease;
+}
+.tableCloth > *:hover {
+    /* transform: translateZ(0); */
+    scale: 1.4;
+}
+.tableCloth > *:hover::before {
+    backdrop-filter: brightness(0.5);
+}
+
+.burger {
+    background: url(./assets/new/burgerOne.png) no-repeat 50%/contain;
+    width: 40%;
+    left: 14%;
+    top: 30%;
+}
+.wings {
+    background: url(./assets/wings.png) no-repeat;
+    width: 35%;
+    background-size: contain;
+    right: 10%;
+    top: 20%;
+}
+.pizza {
+    background: linear-gradient(135deg,transparent 5%, hsl(0 0% 0% / 1), transparent 10%), url(./assets/pizza1.png) no-repeat 0 0/contain;
+    width: 65%;
+    height: 22%;
+    background-size: contain;
+}
+.pasta {
+    background: url(./assets/new/redpasta1.png) no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    width: 55%;
+    height: 18%;
+    bottom: 25%;
+}
+.brownie {
+    background: url(./assets/brownies1.png) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    width: 50%;
+    height: 18%;
+    right: 0;
+    bottom: 8%;
+}
+.ic {
+    background: url(./assets/new/strawberry-ic.png) no-repeat;
+    background-position: 100%;
+    background-size: contain;
+    width: 30%;
+    right: 12%;
+    top: 45%;
+}
+.viewMenuBtn {
+    box-shadow: 0 0 1rem hsl(0 0% 10% / 0.5);
+    transition: scale 0.5s ease;
+
+    &:hover {
+        scale: 1.11;
+    }
+}
+
+.dishContent {
+    color: white;
+    transition: all 0.5s ease;
+}
+.dishContent > * {
+    transition: all 0.5s ease;
+}
+
+.dishContent > * + * {
+    margin-top: 0.5rem;
+}
+
