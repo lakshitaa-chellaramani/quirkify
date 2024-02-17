@@ -22,15 +22,15 @@ async function inserItem() {
         await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('Connected to MongoDB');
         const newItem = new Item({
-            itemName: "Garlic Bread",
-            itemPrice: 89,
-            itemCategory: 'veg',
-            itemSubCategory: 'starters',
+            itemName: "Chicken Wings",
+            itemPrice: 199,
+            itemCategory: 'nonveg',
+            itemSubCategory: 'quickbites',
             noOfOrders: 0,
-            itemMood: 'Happy',
-            itemDesc: 'Stuffed Garlic Bread with extra dipped cheese.',
-            itemImage: 'https://wallpaperaccess.com/full/3601449.jpg',
-            itemCookingTime: '1',
+            itemMood: 'Mellow',
+            itemDesc: 'Tasty Chicken Wings to make your happier mood, the happiest.',
+            itemImage: 'https://wallpaperaccess.com/full/2135830.jpg',
+            itemCookingTime: '15',
         })
         await newItem.save();
         console.log("Inserted Successfully.")
