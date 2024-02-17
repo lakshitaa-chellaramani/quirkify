@@ -11,9 +11,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import CartPage from './Components/Cart/CartPage';
 import FeedbackForm from './Components/FeedBackForm';
-import ProductCard from './Components/ProductCard';
 import Testimonials from './Components/Testimonials';
 import MoodModal from './Components/Modals/MoodModal';
+import ProductCard from './Components/Modals/MoodModa';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,12 +22,14 @@ function App() {
   
       <Router>
       <Navbar />
-       {/* <Routes>
+      <CardGenerator/>
+      <ProductCard/>
+        <Routes>
           <Route path='/' element={<Hero/>}/>
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/cart" element={<CartPage/>} />
 
-  </Routes>*/}
+        </Routes>
       </Router>
      
   );

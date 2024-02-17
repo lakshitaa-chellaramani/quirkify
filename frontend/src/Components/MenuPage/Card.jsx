@@ -8,7 +8,7 @@ const Cards = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://64f24b8c0e1e60602d24f8aa.mockapi.io/operations/users");
+        const response = await axios.get(`http://localhost:4000/api/items/getItems`);
         setData(response.data);
         console.log(response.data)
       } catch (error) {
