@@ -4,7 +4,7 @@ const cartSchema = new Schema({
     cartOwner: { type: String, required: true },
     products: [
         {
-          itemId: Number,
+          itemId: String,
           itemName: String,
           quantity: Number,
           itemPrice: Number
