@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem/MenuItem";
-import Dropdown from "./DropDown";  // Adjust the path based on your project structure
-
+import Dropdown from "./DropDown"; // Adjust the path based on your project structure
+import Cart from "../Cart/Cart"; //
+import FoodItem from "./MenuItem/FoodItem";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -10,17 +11,39 @@ const Dashboard = () => {
   const [menuData, setMenuData] = useState([]);
   const [sortType, setSortType] = useState("default");
   const [showFilter, setShowFilter] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      // If item already exists, update its quantity
+      setCartItems((prevItems) =>
+        prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      // If item doesn't exist, add it to the cart
+      setCartItems((prevItems) => [...prevItems, { ...item, quantity: 1 }]);
+    }
+  };
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prevIsSidebarOpen) => !prevIsSidebarOpen);
   };
 
-  
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/menu/${activeTab}`);
+        const response = await fetch(
+          `http://localhost:4000/api/items/getItems`,
+          {
+            method: "GET",
+          }
+        );
         const data = await response.json();
         setMenuData(data);
       } catch (error) {
@@ -40,8 +63,6 @@ const Dashboard = () => {
   //     window.removeEventListener("resize", handleResize);
   //   };
   // }, []);
-
-  
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -70,68 +91,13 @@ const Dashboard = () => {
   };
 
   const renderTabContent = (tab) => {
-      <div className="px-6 pt-6 overflow-y-auto 2xl:container">
-        {menuData.map((item) => (
-          <div key={item.id} className="flex h-auto items-center justify-center rounded-xl">
-            {/* Render your menu item component here using the 'item' data */}
-            <MenuItem item={item} />
-          </div>
-        ))}
-      </div>
+    <div className="px-6 pt-6 overflow-y-auto 2xl:container"></div>;
   };
 
   const tabClassName = (tab) => `tab ${activeTab === tab ? "checked" : ""}`;
-  
+
   return (
     <div>
-      <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 ${
-          isSidebarOpen ? "" : "hidden"
-        }`}
-        onClick={toggleSidebar}
-      ></div>
-      {/*<aside
-        className={`fixed top-0 left-0 z-10 h-screen w-[70%] flex flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800  ${
-          isSidebarOpen || isLargeScreen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col justify-between flex-1 mt-6">
-          <nav className="flex-1 -mx-3 space-y-3">
-            <div className="mx-3 pt-6">
-              <h3 className="text-gray-600 heading dark:text-gray-300 text-lg font-semibold mt-3">
-                Filter
-              </h3>
-              <div className="mt-2 space-y-2">
-                <div className="flex mt-4 flex-wrap gap-4">
-                  <label className="inline-flex items-center cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" />
-                    <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#43aa8b]"></div>
-                    <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                      Veg
-                    </span>
-                  </label>
-
-                  <label className="inline-flex items-center cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" />
-                    <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#ff0000]"></div>
-                    <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                      Non Veg
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" />
-                    <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#21b0fe]"></div>
-                    <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                      Jain
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </aside>*/}
-
       <div className="ml-auto mb-6 lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="sticky top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
           <div className="flex items-center justify-between space-x-4 px-6 2xl:container">
@@ -206,14 +172,14 @@ const Dashboard = () => {
                 <div className="relative flex items-center text-gray-400 focus-within:text-cyan-400">
                   {/* ... (existing search input) */}
                 </div>
-                <Dropdown sortType={sortType} handleSortChange={handleSortChange} />
-
+                <Dropdown
+                  sortType={sortType}
+                  handleSortChange={handleSortChange}
+                />
               </div>
-              
             </div>
           </div>
         </div>
-
         {/* Tabs Component */}
         <div role="tablist" className="tabs tabs-bordered">
           <input
@@ -251,25 +217,31 @@ const Dashboard = () => {
 
           {renderTabContent(activeTab)}
         </div>
-        {/*<div className="mt-4 ml-3">
-      <label className="text-gray-600 dark:text-gray-300">Sort By:</label>
-      <select
-        value={sortType}
-        onChange={(e) => handleSortChange(e.target.value)}
-        className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white dark:bg-gray-800 dark:border-gray-700"
-      >
-        <option value="mood">Mood</option>
-        <option value="trending">Trending</option>
-        <option value="price">Price</option>
-        {/* Add more sorting options as needed }
-      </select>
-    </div>*/}
-
-        <div className="px-6 pt-6 overflow-y-auto 2xl:container">
+        {/* <div className="px-6 pt-6 overflow-y-auto 2xl:container">
           <div className="flex h-auto items-center justify-center rounded-xl">
-            <MenuItem />
+            {menuData.map((item) => (
+              <div
+                key={item._id}
+                className="flex h-auto items-center justify-center rounded-xl"
+              >
+                {/* Render your menu item component here using the 'item' data 
+                <div className="flex h-auto items-center justify-center rounded-xl">
+                  <FoodItem onAddToCart={addToCart} food={item} />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        </div> */}
+        {menuData.map((item) => (
+          <div
+            key={item._id}
+            className="flex h-auto items-center justify-center rounded-xl"
+          >
+            <div className="flex h-auto items-center justify-center rounded-xl">
+              {item.itemName}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

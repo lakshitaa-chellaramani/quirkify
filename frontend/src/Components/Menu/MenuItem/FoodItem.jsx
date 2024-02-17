@@ -1,10 +1,11 @@
 // FoodItem.js
 import React, { useState } from 'react';
 
-function FoodItem({ food }) {
+function FoodItem(food) {
   const [count, setCount] = useState(0);
   const [showCounter, setShowCounter] = useState(false);
 
+  console.log(food)
   const handleAdd = () => {
     setShowCounter(true);
     setCount(count + 1);
@@ -19,15 +20,15 @@ function FoodItem({ food }) {
   return (
     <div className="overflow-hidden rounded-2xl bg-white border">
       <div className="flex items-center h-[180px] overflow-hidden">
-        <img src={food.imageSrc} className="object-cover p-16" alt={food.alt} />
+        <img src={food.itemImage} className="object-cover p-16" alt={food.alt} />
       </div>
 
       <div className="p-4">
         <div className="flex flex-col items-start justify-between  sm:items-center">
           <div>
-            <p className="text-gray-400">{food.category}</p>
+            <p className="text-gray-400">{food.itemCategory}</p>
             <h2 className="mt-2 heading text-lg font-semibold text-gray-800">
-              {food.name}
+              {food.itemName}
             </h2>
           </div>
           {showCounter ? (
