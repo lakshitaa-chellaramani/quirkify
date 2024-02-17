@@ -22,15 +22,15 @@ async function inserItem() {
         await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('Connected to MongoDB');
         const newItem = new Item({
-            itemName: "Veg Farm-House",
-            itemPrice: 199,
+            itemName: "Garlic Bread",
+            itemPrice: 89,
             itemCategory: 'veg',
-            itemSubCategory: 'main',
+            itemSubCategory: 'starters',
             noOfOrders: 0,
-            itemMood: 'Excited',
-            itemDesc: 'A pizza with tomatoes, olives, and mushrooms with Delicious Taste.',
-            itemImage: 'https://wallpaperaccess.com/full/462773.jpg',
-            itemCookingTime: '20',
+            itemMood: 'Happy',
+            itemDesc: 'Stuffed Garlic Bread with extra dipped cheese.',
+            itemImage: 'https://wallpaperaccess.com/full/3601449.jpg',
+            itemCookingTime: '1',
         })
         await newItem.save();
         console.log("Inserted Successfully.")
