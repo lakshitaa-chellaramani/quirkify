@@ -13,22 +13,22 @@ import HomeProductCards from './Components/HomPageCards/HomeProductCards'
 import Dashboard from './Components/Menu/Asides'
 
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      {/* <Nabvar/>
-      <Hero/>
-      <LocationMap/> */}
-      {/* <Nabvar/>
-      <Admin></Admin> */}
-      {/* <UserCard/> */}
-      
-      <Dashboard/>
-     
+      <Router>
+      <Nabvar />
+        <Routes>
+          <Route path='/' element={<Hero/>}/>
+          <Route path="/Dashboard" element={<Dashboard/>} />
+        </Routes>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

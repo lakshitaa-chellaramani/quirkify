@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
 import MenuItem from "./MenuItem/MenuItem";
 import Dropdown from "./DropDown";  // Adjust the path based on your project structure
 
@@ -16,10 +15,7 @@ const Dashboard = () => {
     setIsSidebarOpen((prevIsSidebarOpen) => !prevIsSidebarOpen);
   };
 
-  const filterButtonProps = useSpring({
-    opacity: showFilter ? 1 : 0,
-    transform: showFilter ? "translateY(0)" : "translateY(-20px)",
-  });
+  
 
   useEffect(() => {
     const fetchData = async () => {
