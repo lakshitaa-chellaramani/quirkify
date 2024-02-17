@@ -11,7 +11,6 @@ const ItemSchema = new Schema({
     itemDesc: { type: String, required: true }, //
     itemImage: { type: Image, required: true },
     itemCookingTime: { type: String, required: true },
-    isJain: { type: Boolean, required: true }
 })
 
 const Item = new model("items", ItemSchema)
