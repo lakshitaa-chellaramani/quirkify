@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* :root {
+    
+} */
+
+*,
+*::before,
+*::after {
+    /* outline: solid hsl(0 0% 0% / 0.5); */
+    box-sizing: border-box;
+}
+#root {
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+
+body {
+    outline: solid;
+    background: #EDF6F9;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.adminWrapper {
+    /* width: 100%; */
+    isolation: isolate;
+}
+.adminNavButton {
+    position: relative;
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: absolute;
+        inset: -3rem;
+        background: #9381FF;
+        z-index: -1;
+        transform: skewY(35deg) translateY(-100%);
+        transition: 0.5s ;
+    }
+    &:hover {
+        color: white;
+        background: transparent;
+    }
+    &:hover::after {
+        transform: skewY(35deg) translateY(0);
+        outline: solid #9381FF;
+    }
+}
