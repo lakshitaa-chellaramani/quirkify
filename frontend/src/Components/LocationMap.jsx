@@ -1,6 +1,7 @@
 // LocationMap.js
 import React from 'react';
 import Map from './Map'; // Adjust the path based on your file structure
+import './Map.css';
 
 const LocationMap = () => {
   return (
