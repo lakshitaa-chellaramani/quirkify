@@ -23,7 +23,7 @@ import Location from './Components/Location';
 import Modalcom from './Components/EventCalendar/Modalcom';
 import Calender from './Components/EventCalendar/Calender';
 import LoginSignUp from './Components/Welcome/LoginSignUp';
-
+import OurTable from './Components/Screens/OurTable';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -48,6 +48,7 @@ function App() {
           <Route path="/productcard" element={<ProductCard/>} />
           {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
           <Route path="/admin" element={<Admin/>} />
+          <Route path='/menu' element={<OurTable/>} />
         </Routes>
       </Router>
      
