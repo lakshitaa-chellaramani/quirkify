@@ -1,10 +1,31 @@
-import React from "react";
 import { useSpring, animated } from "react-spring";
-import "./CardGenerator.css"; // Import your CSS file for styling
-import { useState } from "react";
-import { useEffect } from "react";
+import "./CardGenerator.css";
+import React, { useState, useEffect } from 'react';
+
 
 const CardGenerator = () => {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
+  const addToCart = (item) => {
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += 1;
+      setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    } else {
+      const updatedCart = [...cart, { ...item, quantity: 1 }];
+      setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+  }
   const [hovered, setHovered] = React.useState(false);
   const [itemData, setItemData] = useState([])
 
@@ -99,7 +120,7 @@ const CardGenerator = () => {
                 <p className="text-black price">Rs {data.itemPrice}</p>
                 <p className="text-black price">{data.itemDesc}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Add to Cart</button>
+                  <button onClick={() => addToCart({ id: data._id, name: data.itemName, price: data.itemPrice })} className="btn btn-primary">Add to Cart</button>
                 </div>
               </div>
             </animated.div>
