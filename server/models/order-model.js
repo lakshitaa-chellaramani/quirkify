@@ -26,7 +26,13 @@ const orderSchema = new Schema({
     },
     pickupTime: {
         type: Date
-    }
+    },
+    ingredients: [
+        {
+            ingredient_name: String,
+            quantity_required: Number,
+        }
+    ]
 })
 
 const Order = new model("orders", orderSchema)
