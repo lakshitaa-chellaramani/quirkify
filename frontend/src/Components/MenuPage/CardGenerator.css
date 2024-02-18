@@ -1,0 +1,67 @@
+/* Card styling */
+
+.card-container {
+    background: url('https://img.freepik.com/free-photo/cupcakes-with-flowers-wood_23-2147693660.jpg?w=740&t=st=1708201340~exp=1708201940~hmac=cb65c38b3c954f8b5651362af96a76cf9f1fb8f058365596c1a6157bd9fad0e6');
+    background-size: cover;
+  }
+  
+  .card {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center bottom; /* Set the transform origin to make it expand from the bottom */
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Scale up the card on hover */
+  }
+  
+  .card figure {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s; /* Add transition for the image inside the card */
+  }
+  
+  .card:hover img {
+    transform: scale(1.2); /* Scale up the image on hover */
+  }
+  
+  .card-body {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+  }
+  

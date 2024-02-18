@@ -13,22 +13,29 @@ import HomeProductCards from './Components/HomPageCards/HomeProductCards'
 import Dashboard from './Components/Menu/Asides'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import OurTable from './Components/Screens/OurTable'
+import CartPage from './Components/Cart/CartPage';
+import FeedbackForm from './Components/FeedBackForm';
+import Testimonials from './Components/Testimonials';
+import MoodModal from './Components/Modals/MoodModal';
+import ProductCard from './Components/Modals/MoodModa';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+  
       <Router>
-      <Nabvar />
+      <Navbar />
+      <CardGenerator/>
+      <ProductCard/>
         <Routes>
           <Route path='/' element={<Hero/>}/>
           <Route path="/Dashboard" element={<Dashboard/>} />
-          <Route path="/Menu" element={<OurTable/>} />
+          <Route path="/cart" element={<CartPage/>} />
+
         </Routes>
       </Router>
-    </>
+     
   );
 }
 

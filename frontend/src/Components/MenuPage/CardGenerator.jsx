@@ -1,50 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
+import "./CardGenerator.css"; // Import your CSS file for styling
 
-const CardGenerator = ({image, heading, para, buttonLink}) => {
+const CardGenerator = () => {
+  const [hovered, setHovered] = React.useState(false);
+
+  const cardSpring = useSpring({
+    opacity: hovered ? 1 : 0.9,
+    transform: hovered ? "scale(1.05)" : "scale(1)",
+  });
+
   return (
-    <div>
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
+    <div className="card-container">
+      <animated.div
+        className="card  m-4"
+        style={cardSpring}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <figure>
           <img
-            class="rounded-t-lg h-60 w-full object-cover"
-            src={image}
-            alt=""
+            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            alt="car!"
           />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {heading}
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {para}
-          </p>
-          <a href ={buttonLink}>
-            <button
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </button>
-          </a>
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Food Item</h2>
+          <p>Description of the food item</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Add to Cart</button>
+          </div>
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductCard = () => {
+const ProductCards = () => {
   // Replace these with your actual product details
   const product = {
     name: "Nike Air MX Super 2500 - Red",
@@ -48,4 +48,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default ProductCards;
