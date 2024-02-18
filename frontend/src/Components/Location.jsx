@@ -19,6 +19,7 @@ const Location = () => {
                     method: "GET"
                 });
                 const data = await response.json();
+                console.log(data.locations)
                 setLocations(data.locations);
             } catch (error) {
                 console.log(error);

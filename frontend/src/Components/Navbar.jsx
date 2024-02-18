@@ -11,11 +11,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-8 flex items-center max-h-28 w-[100%]">
         {/* logo */}
         <div className="mr-auto md:w-48 flex-shrink-0">
+          <Link to="/">
           <img
             className="h-24 md:h-28 bg-contain"
             src="https://png.pngtree.com/png-clipart/20230917/original/pngtree-pink-delivery-truck-icon-on-a-white-background-vector-png-image_12293962.png"
             alt=""
           />
+          </Link>
+          
         </div>
         {/* search */}
         <div className="w-full  max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 mr-3 rounded-md hidden xl:flex items-center">
@@ -44,8 +47,12 @@ const Navbar = () => {
           </svg>
         </div>
         {/* phone number */}
-        <div className="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
-          <MoodModa/>
+        <div className=' flex justify-center gap-4'>
+          <button className=' adminNavButton text-lg px-7 py-2 ml-4 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'><Link to="/location">Location</Link></button>
+          <div className="hidden sm:flex flex-col place-items-end">
+            <MoodModa/>
+          </div>
+
         </div>
         {/* buttons */}
         <nav className="contents">

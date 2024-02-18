@@ -12,6 +12,7 @@
     /* outline: solid hsl(0 0% 0% / 0.5); */
     box-sizing: border-box;
 }
+
 #root {
     padding: 0;
 }
@@ -30,10 +31,12 @@ body {
     /* width: 100%; */
     isolation: isolate;
 }
+
 .adminNavButton {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+
     /* overflow: hidden; */
     &:after {
         content: '';
@@ -42,12 +45,14 @@ body {
         background: #9381FF;
         z-index: -1;
         transform: skewY(35deg) translateY(-100%);
-        transition: 0.5s ;
+        transition: 0.5s;
     }
+
     &:hover {
         color: white;
         background: transparent;
     }
+
     &:hover::after {
         transform: skewY(35deg) translateY(0);
         outline: solid #9381FF;
@@ -69,12 +74,15 @@ table {
     border-collapse: collapse;
 }
 
-caption, th, td {
-    padding: 0.25rem ;
+caption,
+th,
+td {
+    padding: 0.25rem;
     text-align: left;
 }
 
-th,td {
+th,
+td {
     font-size: 1.25rem;
 }
 
@@ -88,6 +96,7 @@ caption {
     font-weight: 700;
     text-transform: uppercase;
 }
+
 table button {
     padding: 0.5rem 1rem;
     background: hsl(0 0% 50%);
@@ -95,14 +104,16 @@ table button {
 }
 
 .tableWrapper {
+    position: relative;
     background: url(./assets/tableTwo.jpg);
-    width: min(960px,100% - 4rem);
+    width: min(960px, 100% - 4rem);
     aspect-ratio: 1/2;
-    padding: 2rem 6rem;
+    padding: 2rem clamp(3rem,5vw,6rem);
     border-radius: 0.25rem;
     /* outline: solid; */
     margin: 2rem auto;
 }
+
 .tableCloth {
     overflow: hidden;
     position: relative;
@@ -111,10 +122,10 @@ table button {
     background: url(./assets/cloth.avif);
 
     /* box-shadow: 0 0 1rem hsl(0 0% 90%); */
-    
+
 }
 
-.tableCloth > * {
+.tableCloth>* {
     /* outline: solid; */
 
     position: absolute;
@@ -126,7 +137,8 @@ table button {
 
     transition: scale 0.5s ease;
 }
-.tableCloth > *::before {
+
+.tableCloth>*::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -135,11 +147,13 @@ table button {
 
     transition: all 0.5s ease;
 }
-.tableCloth > *:hover {
+
+.tableCloth>*:hover {
     /* transform: translateZ(0); */
     scale: 1.4;
 }
-.tableCloth > *:hover::before {
+
+.tableCloth>*:hover::before {
     backdrop-filter: brightness(0.5);
 }
 
@@ -149,6 +163,7 @@ table button {
     left: 14%;
     top: 30%;
 }
+
 .wings {
     background: url(./assets/wings.png) no-repeat;
     width: 35%;
@@ -156,12 +171,14 @@ table button {
     right: 10%;
     top: 20%;
 }
+
 .pizza {
-    background: linear-gradient(135deg,transparent 5%, hsl(0 0% 0% / 1), transparent 10%), url(./assets/pizza1.png) no-repeat 0 0/contain;
+    background: linear-gradient(135deg, transparent 5%, hsl(0 0% 0% / 1), transparent 10%), url(./assets/pizza1.png) no-repeat 0 0/contain;
     width: 65%;
     height: 22%;
     background-size: contain;
 }
+
 .pasta {
     background: url(./assets/new/redpasta1.png) no-repeat;
     background-size: contain;
@@ -170,6 +187,7 @@ table button {
     height: 18%;
     bottom: 25%;
 }
+
 .brownie {
     background: url(./assets/brownies1.png) no-repeat;
     background-position: bottom;
@@ -179,6 +197,7 @@ table button {
     right: 0;
     bottom: 8%;
 }
+
 .ic {
     background: url(./assets/new/strawberry-ic.png) no-repeat;
     background-position: 100%;
@@ -187,61 +206,63 @@ table button {
     right: 12%;
     top: 45%;
 }
+
 .viewMenuBtn {
     box-shadow: 0 0 1rem hsl(0 0% 10% / 0.5);
-    transition: scale 0.5s ease;
-
-    &:hover {
+    /* transition: scale 0.5s ease; */
+    animation: scaleBreathing 3s ease-in-out infinite;
+    /* &:hover {
         scale: 1.11;
-    }
+    } */
 }
 
 .dishContent {
     color: white;
     transition: all 0.5s ease;
 }
-.dishContent > * {
+
+.dishContent>* {
     transition: all 0.5s ease;
 }
 
-.dishContent > * + * {
+.dishContent>*+* {
     margin-top: 0.5rem;
 }
 
-.card-title{
+.card-title {
     text-align: center;
     font-size: 2rem;
     letter-spacing: .1rem;
 }
 
-.card-body{
+.card-body {
     display: flex;
     justify-content: center;
     align-items: center;
     background: none;
 }
 
-.card-container{
+.card-container {
     display: flex;
     justify-content: center;
 }
 
-.card{
+.card {
     width: 30vw;
     /* box-shadow: 0px 0px 10px 2px black; */
 }
 
-.img_product{
+.img_product {
     height: 30vh;
     width: 30vw;
 }
 
-.price{
+.price {
     font-weight: bolder;
     font-size: 1.2rem;
 }
 
-.filter_btn{
+.filter_btn {
     background: none;
     border: 2px solid grey;
     padding: 10px 50px;
@@ -249,20 +270,24 @@ table button {
     margin: 2rem;
 }
 
-.filter_btn:hover{
+.filter_btn:hover {
     background-color: grey;
     border: 2px solid grey;
     color: black;
 }
+
 .loginContainer {
-    width: min(768px,100% - 6rem);
+    width: min(768px, 100% - 6rem);
 }
-.loginContainer > * {
+
+.loginContainer>* {
     width: 100%;
 }
+
 .underlineContainer {
     overflow: hidden;
 }
+
 .underline {
     transform: translateX(-100%);
 
@@ -273,7 +298,125 @@ table button {
     50% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(100%);
+    }
+}
+
+
+/* Location Section CSS */
+
+.main_location {
+    display: flex;
+    margin-top: 2rem;
+    /* width: 80vw; */
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.left_location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1.3s ease-in-out;
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.day_left:hover {
+    transform: scale(1.1);
+}
+
+.day_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 8px -1px rgba(214, 212, 212, 0.709);
+    padding: 10px;
+    width: 30vw;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+}
+
+.right_location iframe {
+    height: 90vh;
+    /* width: 90vh; */
+    max-width: 100%;
+}
+
+.selected {
+    color: black;
+}
+
+/* @media only screen and (max-width : 1250px) {
+    .left_location {
+        transform: translateX(-800px);
+    }
+
+    .main_location {
+        justify-content: center;
+    }
+
+    .inside_ham {
+        transform: translateX(100px);
+    }
+} */
+
+.inside_ham {
+    transition: width 4s ease-in-out;
+}
+
+.ham {
+    position: absolute;
+    top: 10%;
+    z-index: 1000;
+    font-size: 3rem;
+    left: 1%;
+    transform: translateX(-80px);
+}
+
+/* .clicked_class{
+    transform: translateX(800px);
+    transition: transform 2s ease-in-out;
+    width: 60vw;
+} */
+
+.main_products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.productImage {
+    height: 35vh;
+    width: 20vw;
+}
+
+.right {
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+@keyframes scaleBreathing {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.4;
+    }
+    100% {
+        scale: 1;
     }
 }
