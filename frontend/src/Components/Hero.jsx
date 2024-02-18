@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import foodtruck from "./Animations/foodtruck.json";
 import OurTable from "./Screens/OurTable";
+import { Link } from "react-router-dom";
+
 
 const Hero = () => {
-        const [countdown, setCountdown] = useState(10);
-      
-        useEffect(() => {
-          const timer = setInterval(() => {
-            setCountdown((prevCount) => prevCount - 1);
-          }, 1000);
-      
-          return () => clearInterval(timer);
-        }, []);
+  const [countdown, setCountdown] = useState(10);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prevCount) => prevCount - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="bg-white ">
       <section className="py-6">
@@ -35,20 +37,20 @@ const Hero = () => {
               </p>
 
               <div className="mt-5 sm:flex sm:items-center sm:space-x-8 justify-center">
-                <button className='adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'>Start Exploring</button>
+                <Link to='/dashboard'><button className='adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'>Start Exploring</button></Link>
               </div>
             </div>
 
             <div>
-            <Lottie
-            animationData={foodtruck}
-            className="relative w-full  mt-6 h-48  lg:h-[68vh] lg:object-cover"
-          />
+              <Lottie
+                animationData={foodtruck}
+                className="relative w-full  mt-6 h-48  lg:h-[68vh] lg:object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
-      <OurTable/>
+      <OurTable />
     </div>
   );
 };
