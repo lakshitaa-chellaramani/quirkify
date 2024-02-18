@@ -24,7 +24,15 @@ app.use("/api/auth", contactRoute)
 app.use("/api/admin", adminRoute)
 app.use("/api/items", itemRoute)
 app.use("/api/orders", orderRoute)
-// app.use("/api/carts", cartRoute)
+app.use("/api/carts", cartRoute)
+
+app.use("/api/payments", paymentRoute)
+
+app.get('/api/getKey', (req, res) => {
+    res.status(200).json({
+        key: process.env.RAZORPAY_KEY_ID
+    })
+})
 
 app.use(errorMiddleware)
 

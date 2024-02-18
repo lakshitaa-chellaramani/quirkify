@@ -26,6 +26,7 @@
     "survey-react-ui": "latest"
   },
   "devDependencies": {
+    "@types/date-fns": "^2.6.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",

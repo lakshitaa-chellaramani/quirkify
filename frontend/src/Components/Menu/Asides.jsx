@@ -3,6 +3,7 @@ import MenuItem from "./MenuItem/MenuItem";
 import Dropdown from "./DropDown"; // Adjust the path based on your project structure
 import Cart from "../Cart/Cart"; //
 import FoodItem from "./MenuItem/FoodItem";
+import CardGenerator from "../MenuPage/CardGenerator";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -214,7 +215,8 @@ const Dashboard = () => {
             ))}
           </div>
         </div> */}
-        {menuData.map((item) => (
+        <CardGenerator></CardGenerator>
+        {/* {menuData.map((item) => (
           <div
             key={item._id}
             className="flex h-auto items-center justify-center rounded-xl"
@@ -223,9 +225,9 @@ const Dashboard = () => {
               {item.itemName}
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
-    </div>
+    </div>                                                                                                    
   );
 };
 

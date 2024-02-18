@@ -31,6 +31,21 @@ async function inserItem() {
             itemDesc: 'Tasty Chicken Wings to make your happier mood, the happiest.',
             itemImage: 'https://wallpaperaccess.com/full/2135830.jpg',
             itemCookingTime: '15',
+            ingredients: 
+            [
+                {
+                    ingredient_name: "chickenleg",
+                    quantity: 6
+                },
+                {
+                    ingredient_name: "salt",
+                    quantity: 4
+                },
+                {
+                    ingredient_name: "oil",
+                    quantity: 4
+                }
+            ]
         })
         await newItem.save();
         console.log("Inserted Successfully.")
@@ -40,4 +55,29 @@ async function inserItem() {
     }
 }
 
-inserItem();
+// inserItem();
+
+// const inventorySchema = new mongoose.Schema({
+//     ingredient_name: { type: String, required: true },
+//     quantity: { type: Number, required: true, default: 10 },
+// })
+
+// const Inventory = new mongoose.model("inventory", inventorySchema)
+
+// async function insertItem1() {
+//     try {
+//         await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//         console.log('Connected to MongoDB');
+//         const newItem = new Item({
+//             ingredient_name: "Milk"
+//         })
+//         await newItem.save();
+//         console.log("Inserted Successfully.")
+//     }
+//     catch (error) {
+//         console.error('Error fetching product information:', error);
+//     }
+// }
+
+// insertItem1();
+

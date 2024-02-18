@@ -5,12 +5,19 @@ const ItemSchema = new Schema({
     itemPrice: { type: Number, required: true }, //
     itemCategory: { type: String, required: true }, // Veg / Non-Veg
     itemSubCategory: { type: String, required: true }, // Desert / Main / Starters / Quick-Bites
-    noOfOrders: { type: Number, required: true }, //
+    // noOfOrders: { type: Number, required: true }, //
     itemMood: { type: String, required: true }, //
     itemCalories: { type: Number, required: true, default : -1 },
     itemDesc: { type: String, required: true }, //
     itemImage: { type: String, required: true },
     itemCookingTime: { type: String, required: true },
+    ingredients: 
+    [
+        {
+            ingredient_name: String,
+            quantity_required: Number,
+        }
+    ]
 })
 
 const Item = new model("items", ItemSchema)
