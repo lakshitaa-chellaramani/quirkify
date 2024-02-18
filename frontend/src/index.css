@@ -347,14 +347,15 @@ table button {
 
 .right_location iframe {
     height: 90vh;
-    width: 90vh;
+    /* width: 90vh; */
+    max-width: 100%;
 }
 
 .selected {
     color: black;
 }
 
-@media only screen and (max-width : 1250px) {
+/* @media only screen and (max-width : 1250px) {
     .left_location {
         transform: translateX(-800px);
     }
@@ -366,7 +367,7 @@ table button {
     .inside_ham {
         transform: translateX(100px);
     }
-}
+} */
 
 .inside_ham {
     transition: width 4s ease-in-out;

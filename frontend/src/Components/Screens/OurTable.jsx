@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Nabvar'
+import { Link } from 'react-router-dom';
 
 const OurTable = () => {
   const [cart, setCart] = useState([]);
@@ -87,7 +88,7 @@ const OurTable = () => {
           </div>
         </div>
         
-        <button className="viewMenuBtn sticky bottom-8 bg-lavender px-[1.5em] py-[0.75em] rounded-lg text-white text-lg">View Entire Menu</button>
+        <button className="viewMenuBtn sticky bottom-8 bg-lavender px-[1.5em] py-[0.75em] rounded-lg text-white text-lg"><Link to="/dashboard">View Entire Menu</Link></button>
       </div>
     </>
   )

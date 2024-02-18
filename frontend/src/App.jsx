@@ -29,6 +29,7 @@ import CheckoutPage from './Components/Checkout/CheckoutPage';
 import MoodModa from './Components/Modals/MoodModa'
 
 import OurTable from './Components/Screens/OurTable';
+import AdminOrder from './Components/AdminOrder'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -42,6 +43,7 @@ function App() {
           <Route path='/' element={<Hero/>}/>
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/admin/order" element={<AdminOrder/>} />
           <Route path="/login" element={<LoginSignUp/>} />
           <Route path="/feedback" element={<FeedbackForm/>} />
           <Route path="/testimonials" element={<Testimonials/>} />

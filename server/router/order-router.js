@@ -5,7 +5,7 @@ const { createOrder, getOrders, orderPickedUp, orderReady } = require('../contro
 const adminMiddleware = require('../middlewares/admin-middleware')
 
 router.route('/createOrder').post(authMiddleware, createOrder)
-router.route('/getOrders').get(authMiddleware, adminMiddleware, getOrders)
+router.route('/getOrders').get(getOrders)
 router.route('/pickedUp').patch(authMiddleware, adminMiddleware, orderPickedUp)
 router.route('/orderReady').post(authMiddleware, adminMiddleware, orderReady)
 

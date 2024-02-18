@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const AdminUser = () => {
+    const [users, setUsers] = useState([])
     const allUsersData = [
         {
             username: "Milind",
@@ -8,6 +9,20 @@ const AdminUser = () => {
             phone: "2345678901"
         }
     ]
+
+    const getAllUsers = async () => {
+        const response = await fetch('http://localhost:4000/api/admin/users', {
+            method: "GET"
+        })
+        const data = await response.json()
+        if (response.ok) {
+            setUsers(data)
+            console.log(data)
+        }
+    }
+    useEffect(() => {
+        getAllUsers()
+    }, [])
     return (
         <>
             <section>
@@ -24,7 +39,7 @@ const AdminUser = () => {
                             </tr>
                         </thead>
                         {
-                            allUsersData.map((data, index) => {
+                            users.map((data, index) => {
                                 return (
                                     <tbody key={index}>
                                         <tr>
