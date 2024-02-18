@@ -35,7 +35,7 @@ const Mood = ({animationdata}) => {
   }
   return (
     <div>
-      <div className="bg-white border border-zinc-200 rounded-3xl py-8 flex justify-center items-center">
+      <div className="romanticModifier bg-[#f1effe] border border-zinc-200 rounded-3xl py-8 flex justify-center items-center">
               <Lottie 
               animationData={animation}
               className="w-40 h-40 object-cover"

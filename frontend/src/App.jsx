@@ -1,14 +1,18 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Hero from './Components/Hero';
-import LocationMap from './Components/LocationMap';
-import CardGenerator from './Components/MenuPage/CardGenerator';
-import HomeProductCards from './Components/HomPageCards/HomeProductCards';
-import Dashboard from './Components/Menu/Asides';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Navbar from './Components/Navbar'
+import Nabvar from './Components/Nabvar'
+import { UserCard } from './Components/UserCard'
+import Hero from './Components/Hero'
+import LocationMap from './Components/LocationMap'
+import Admin from './Components/Admin'
+import CardGenerator from './Components/MenuPage/CardGenerator'
+import HomeProductCards from './Components/HomPageCards/HomeProductCards'
+import Dashboard from './Components/Menu/Asides'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
 import CartPage from './Components/Cart/CartPage';
 import FeedbackForm from './Components/FeedBackForm';
 import Testimonials from './Components/Testimonials';
@@ -40,7 +44,7 @@ function App() {
           <Route path="/locationmap" element={<LocationMap/>} />
           <Route path="/homeproductcards" element={<HomeProductCards/>} />
           <Route path="/modalcom" element={<Modalcom/>} />
-          <Route path="/calender" element={<Calender/>} />
+          {/* <Route path="/calender" element={<Calender/>} /> */}
           <Route path="/productcard" element={<ProductCard/>} />
           {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
 

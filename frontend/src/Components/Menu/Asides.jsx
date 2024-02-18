@@ -100,7 +100,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="ml-auto mb-6 lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
-        <div className="sticky top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
+        <div className="sticky top-0 z-10 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
           <div className="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
@@ -108,25 +108,6 @@ const Dashboard = () => {
             >
               Menu
             </h5>
-            <button
-              onClick={toggleSidebar}
-              className="-mr-2 h-16 w-12 border-r lg:hidden dark:border-gray-700 dark:text-gray-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="my-auto h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
             <div className="flex space-x-4">
               <div hidden className="md:block">
                 <div className="relative flex items-center text-gray-400 focus-within:text-cyan-400">
@@ -179,6 +160,7 @@ const Dashboard = () => {
                 />
               </div>
             </div>
+            <Dropdown sortType={sortType} handleSortChange={handleSortChange} />
           </div>
         </div>
         {/* Tabs Component */}

@@ -33,7 +33,7 @@ const Hero = () => {
                 Quirkify in minutes. Your favorites, faster than ever.
               </p>
 
-              <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
+              <div className="mt-5 sm:flex sm:items-center sm:space-x-8 justify-center">
                 <button><a
                   href="#"
                   title=""
@@ -43,9 +43,6 @@ const Hero = () => {
                   {" "}
                   Start exploring{" "}
                 </a></button>
-                <span className="text-[#DA291C] text-sm ml-4">
-        {countdown} seconds left to get a special offer!
-      </span>
               </div>
             </div>
 
