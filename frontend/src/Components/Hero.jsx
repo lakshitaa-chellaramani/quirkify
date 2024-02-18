@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import foodtruck from "./Animations/foodtruck.json";
+import OurTable from "./Screens/OurTable";
 
 const Hero = () => {
         const [countdown, setCountdown] = useState(10);
@@ -47,6 +48,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <OurTable/>
     </div>
   );
 };

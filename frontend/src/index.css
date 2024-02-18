@@ -34,6 +34,7 @@ body {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    /* overflow: hidden; */
     &:after {
         content: '';
         position: absolute;
@@ -97,7 +98,7 @@ table button {
     background: url(./assets/tableTwo.jpg);
     width: min(960px,100% - 4rem);
     aspect-ratio: 1/2;
-    padding: 2rem 6rem;
+    padding: 2rem clamp(3rem,5vw,6rem);
     border-radius: 0.25rem;
     /* outline: solid; */
     margin: 2rem auto;

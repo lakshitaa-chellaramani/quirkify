@@ -17,12 +17,17 @@ import CartPage from './Components/Cart/CartPage';
 import FeedbackForm from './Components/FeedBackForm';
 import Testimonials from './Components/Testimonials';
 import MoodModal from './Components/Modals/MoodModal';
-import ProductCard from './Components/Modals/MoodModa';
+import ProductCard from './Components/MenuPage/CardGenerator';
 import Location from './Components/Location';
 
 import Modalcom from './Components/EventCalendar/Modalcom';
 import Calender from './Components/EventCalendar/Calender';
 import LoginSignUp from './Components/Welcome/LoginSignUp';
+import Test from './Components/MenuPage/Test';
+import Preorder from './Components/Modals/Preorder';
+import CheckoutPage from './Components/Checkout/CheckoutPage';
+import MoodModa from './Components/Modals/MoodModa'
+
 import OurTable from './Components/Screens/OurTable';
 
 function App() {
@@ -42,13 +47,14 @@ function App() {
           <Route path="/testimonials" element={<Testimonials/>} />
           <Route path="/location" element={<Location/>} />
           <Route path="/locationmap" element={<LocationMap/>} />
-          <Route path="/homeproductcards" element={<HomeProductCards/>} />
           <Route path="/modalcom" element={<Modalcom/>} />
           {/* <Route path="/calender" element={<Calender/>} /> */}
           <Route path="/productcard" element={<ProductCard/>} />
           {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
           <Route path="/admin" element={<Admin/>} />
-          <Route path='/menu' element={<OurTable/>} />
+          <Route path='/mood' element={<MoodModa/>} />
+
+          {/* <Route path='/menu' element={<OurTable/>} /> */}
         </Routes>
       </Router>
      

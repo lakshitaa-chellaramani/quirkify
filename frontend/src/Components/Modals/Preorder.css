@@ -1,0 +1,24 @@
+@import 'react-datetime-picker/dist/DateTimePicker.css';
+
+.preorder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .preorder-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .preorder-btn:hover {
+    background-color: #2980b9;
+  }
+  

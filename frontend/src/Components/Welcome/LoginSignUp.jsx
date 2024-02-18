@@ -41,7 +41,7 @@ const LoginSignUp = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
+                className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
               >
                 Your email
               </label>
@@ -60,7 +60,7 @@ const LoginSignUp = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
+                className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
               >
                 Password
               </label>

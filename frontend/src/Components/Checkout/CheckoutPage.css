@@ -1,0 +1,42 @@
+.checkout-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-methods {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .payment-methods label {
+    margin-right: 20px;
+  }
+  
+  .credit-card-details {
+    margin-top: 20px;
+  }
+  
+  .credit-card-details label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .checkout-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #2980b9;
+  }
+  
