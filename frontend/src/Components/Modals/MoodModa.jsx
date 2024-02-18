@@ -8,7 +8,7 @@ const ProductCard = () => {
   return (
     <>
       {/* The button to open modal */}
-      <label htmlFor="my_modal_7" className="btn">
+      <label htmlFor="my_modal_7" className=" adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]">
         Moods
       </label>
 

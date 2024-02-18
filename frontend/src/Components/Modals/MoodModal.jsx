@@ -52,7 +52,7 @@ const MoodModal = ({ mooddata, animationdata }) => {
       {/* Modal */}
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Select Your Mood</h3>
+          <h3 className="font-bold text-lg text-[#f1effe]">Select Your Mood</h3>
           <div className="grid grid-cols-5 gap-4 mt-4">
             {/* Lottie animations representing different moods */}
             {mooddata.map((mood, index) => (

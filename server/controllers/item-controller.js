@@ -42,8 +42,8 @@ const getMaincourse = async (req, res) => {
 
 const getDesserts = async (req, res) => {
     try {
-        var desserts = await Item.find({ itemSubCategory: "dessert" })
-        res.status(200).json({ desserts })
+        var menu = await Item.find({ itemSubCategory: "dessert" })
+        res.status(200).json({ menu })
     }
     catch (error) {
         res.send("an error occured")
@@ -52,8 +52,18 @@ const getDesserts = async (req, res) => {
 
 const getQuickBites = async (req, res) => {
     try {
-        var qb = await Item.find({ itemSubCategory: "qb" })
-        res.status(200).json({ qb })
+        var menu = await Item.find({ itemSubCategory: "quickbites" })
+        res.status(200).json({ menu })
+    }
+    catch (error) {
+        res.send("an error occured")
+    }
+}
+
+const getSortedPrice = async (req, res) => {
+    try {
+        var menu = await Item.find({}).sort({ itemPrice: 1 })
+        res.status(200).json({ menu })
     }
     catch (error) {
         res.send("an error occured")
@@ -268,4 +278,4 @@ const getDessertFilter = async (req, res) => {
     }
 }
 
-module.exports = { getStarters, getVeg, getNonVeg, getMaincourse, getDesserts, getQuickBites, getDessertFilter, getMaincourseFilter, getStartersFilter, getQuickbitesFilter }
+module.exports = { getStarters, getVeg, getNonVeg, getSortedPrice, getMaincourse, getDesserts, getQuickBites, getDessertFilter, getMaincourseFilter, getStartersFilter, getQuickbitesFilter }

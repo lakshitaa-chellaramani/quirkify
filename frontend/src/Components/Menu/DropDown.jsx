@@ -14,8 +14,8 @@ const Dropdown = ({ sortType, handleSortChange }) => {
 
   return (
     <>
-    <div className=" overflow-x-hidden">
-      <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 absolute">
+    <div className="">
+      <ul className="dropdown-content menu p-2 rounded-box w-52">
         <li>
           <select
             value={sortType}
