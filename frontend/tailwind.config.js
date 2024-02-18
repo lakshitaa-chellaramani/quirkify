@@ -11,7 +11,7 @@ export default {
         lightblue : '#B8B8FF',
         babypink : '#FFEEDD',
         pink : '#FFD8BE',
-        lavender : '#FFD8BE',
+        lavender : '#9381FF',
       },
     },
   },

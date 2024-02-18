@@ -9,7 +9,7 @@ const ProductCard = () => {
     <>
       {/* The button to open modal */}
       <label htmlFor="my_modal_7" className="btn">
-        open modal
+        Moods
       </label>
 
       {/* Put this part before </body> tag */}

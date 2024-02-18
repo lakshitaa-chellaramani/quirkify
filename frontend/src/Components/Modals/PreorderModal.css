@@ -1,0 +1,39 @@
+@import 'react-datetime-picker/dist/DateTimePicker.css';
+
+.preorder-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .preorder-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .preorder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .close-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .close-btn:hover {
+    background-color: #2980b9;
+  }
+  
