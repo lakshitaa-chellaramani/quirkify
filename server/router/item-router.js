@@ -14,6 +14,8 @@ router.route('/menu/dessert').get(menuItems.getDesserts)
 router.route('/menu/veg').get(menuItems.getVeg)
 router.route('/menu/nonveg').get(menuItems.getNonVeg)
 
+router.route('/menu/sortByPrice').get(menuItems.getSortedPrice)
+
 router.route('/menu/starters/filter').post(menuItems.getStartersFilter)
 router.route('/menu/maincourse/filter').post(menuItems.getMaincourseFilter)
 router.route('/menu/quickbite/filter').post(menuItems.getQuickbitesFilter)

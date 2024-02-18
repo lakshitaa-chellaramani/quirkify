@@ -3,14 +3,12 @@ import { useSpring, animated } from "react-spring";
 import "./CardGenerator.css"; // Import your CSS file for styling
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const CardGenerator = () => {
   const [hovered, setHovered] = React.useState(false);
   const [itemData, setItemData] = useState([])
-  const [items, setItems] = useState([])
 
-  console.log(items)
+  // console.log(items)
 
   const cardSpring = useSpring({
     opacity: hovered ? 1 : 0.9,
@@ -34,14 +32,27 @@ const CardGenerator = () => {
     getItems()
   }, [])
 
-  const vegHandler = async () => {
+  const buttonhandler = async (category) => {
     try {
-      const response = await fetch('http://localhost:4000/api/items/menu/veg', {
+      const response = await fetch(`http://localhost:4000/api/items/menu/${category}`, {
         method: "GET"
       })
       const data = await response.json()
-      // console.log(data)
-      setItems(data)
+      console.log("Data: ", data)
+      setItemData(data.menu)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const sortHandler = async (category) => {
+    try {
+      const response = await fetch(`http://localhost:4000/api/items/menu/sortByPrice`, {
+        method: "GET"
+      })
+      const data = await response.json()
+      console.log("Data: ", data)
+      setItemData(data.menu)
     } catch (error) {
       console.log(error)
     }
@@ -52,18 +63,18 @@ const CardGenerator = () => {
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn filter_btn m-1">Filter</div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-          <li><Link onClick={vegHandler}>Filter by Veg</Link></li>
-          <li><button onClick={vegHandler}>Filter by Non-Veg</button></li>
-          <li><button onClick={vegHandler}>Filter by Starter</button></li>
-          <li><button onClick={vegHandler}>Filter by Main Course</button></li>
-          <li><button onClick={vegHandler}>Filter by Desserts</button></li>
-          <li><button onClick={vegHandler}>Filter by Quick Bites</button></li>
+          <li><button onClick={() => buttonhandler("veg")}>Filter by Veg</button></li>
+          <li><button onClick={() => buttonhandler("nonveg")}>Filter by Non-Veg</button></li>
+          <li><button onClick={() => buttonhandler("starters")}>Filter by Starter</button></li>
+          <li><button onClick={() => buttonhandler("maincourse")}>Filter by Main Course</button></li>
+          <li><button onClick={() => buttonhandler("dessert")}>Filter by Desserts</button></li>
+          <li><button onClick={() => buttonhandler("quickbite")}>Filter by Quick Bites</button></li>
         </ul>
       </div>
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn filter_btn m-1">Sort</div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Sort by Price</a></li>
+          <li><button onClick={sortHandler}>Sort by Price</button></li>
         </ul>
       </div>
       {
@@ -94,7 +105,7 @@ const CardGenerator = () => {
             </animated.div>
           </div>
         ))
-        }
+      }
     </>
   );
 };

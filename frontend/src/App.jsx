@@ -42,7 +42,7 @@ function App() {
           <Route path="/modalcom" element={<Modalcom/>} />
           <Route path="/calender" element={<Calender/>} />
           <Route path="/productcard" element={<ProductCard/>} />
-          <Route path="/eventCalendar" element={<EventCalendar/>} />
+          {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
 
         </Routes>
       </Router>
