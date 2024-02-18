@@ -51,8 +51,9 @@ const OurTable = () => {
             </div>
           </div>
         </div>
+        
+        <button className="viewMenuBtn sticky bottom-8 bg-lavender px-[1.5em] py-[0.75em] rounded-lg text-white text-lg">View Entire Menu</button>
       </div>
-      <button className="viewMenuBtn sticky bottom-6 bg-lavender px-[1.5em] py-[0.75em] rounded-lg text-white text-lg">View Entire Menu</button>
     </>
   )
 }

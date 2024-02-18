@@ -14,7 +14,7 @@ const Hero = () => {
           return () => clearInterval(timer);
         }, []);
   return (
-    <div className="bg-white ">
+    <div className="bg-white">
       <section className="py-6">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
@@ -23,7 +23,7 @@ const Hero = () => {
                 The Mobile Food Hub!
                 <div className="underlineContainer relative inline-flex">
                   <span className="underline absolute inset-x-0 bottom-0 border-b-[30px] border-lavender"></span>
-                  <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
+                  <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl px-2">
                     Quirkify.
                   </h1>
                 </div>

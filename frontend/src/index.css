@@ -95,6 +95,7 @@ table button {
 }
 
 .tableWrapper {
+    position: relative;
     background: url(./assets/tableTwo.jpg);
     width: min(960px,100% - 4rem);
     aspect-ratio: 1/2;
@@ -189,11 +190,11 @@ table button {
 }
 .viewMenuBtn {
     box-shadow: 0 0 1rem hsl(0 0% 10% / 0.5);
-    transition: scale 0.5s ease;
-
-    &:hover {
+    /* transition: scale 0.5s ease; */
+    animation: scaleBreathing 3s ease-in-out infinite;
+    /* &:hover {
         scale: 1.11;
-    }
+    } */
 }
 
 .dishContent {
@@ -275,5 +276,16 @@ table button {
     }
     100% {
         transform: translateX(100%);
+    }
+}
+@keyframes scaleBreathing {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.4;
+    }
+    100% {
+        scale: 1;
     }
 }
