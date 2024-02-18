@@ -5,6 +5,9 @@
 /* :root {
     
 } */
+html {
+    scroll-behavior: smooth;
+}
 
 *,
 *::before,
@@ -23,8 +26,7 @@ body {
     outline: solid;
     background: #EDF6F9;
     background: #F8F7FF;
-
-    font-family: "Oswald", sans-serif;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .adminWrapper {
@@ -108,7 +110,7 @@ table button {
     background: url(./assets/tableTwo.jpg);
     width: min(960px, 100% - 4rem);
     aspect-ratio: 1/2;
-    padding: 2rem clamp(3rem,5vw,6rem);
+    padding: 2rem clamp(3rem, 5vw, 6rem);
     border-radius: 0.25rem;
     /* outline: solid; */
     margin: 2rem auto;
@@ -409,14 +411,37 @@ table button {
     font-size: 1.5rem;
     text-transform: capitalize;
 }
+
 @keyframes scaleBreathing {
     0% {
         scale: 1;
     }
+
     50% {
         scale: 1.4;
     }
+
     100% {
         scale: 1;
+    }
+}
+
+.btn_down {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: #9381FF;
+    outline: solid;
+    border-radius: 50%;
+    padding: 0.75rem;
+
+    animation: verticalMotion 1s ease infinite alternate;
+}
+
+@keyframes verticalMotion {
+    to {
+        transform: translateX(-50%) translateY(-50%);
     }
 }

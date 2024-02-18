@@ -3,6 +3,8 @@ import Lottie from "lottie-react";
 import foodtruck from "./Animations/foodtruck.json";
 import OurTable from "./Screens/OurTable";
 import { Link } from "react-router-dom";
+import { FaAngleDoubleDown } from "react-icons/fa";
+
 
 
 const Hero = () => {
@@ -16,17 +18,20 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
+      <a href="#menu">
+        <FaAngleDoubleDown className="btn_down" />
+      </a>
       <section className="py-6">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h1 className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
+              <h1 style={{fontFamily : "Oswald, sans-serif", letterSpacing : ".1rem"}} className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
                 The Mobile Food Hub!
                 <div className="underlineContainer relative inline-flex">
                   <span className="underline absolute inset-x-0 bottom-0 border-b-[30px] border-lavender"></span>
                   <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl px-2">
-                    Quirkify.
+                    <span>   </span>Quirkify.
                   </h1>
                 </div>
               </h1>
@@ -50,7 +55,8 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <OurTable />
+      <div id="menu"></div>
+      <OurTable/>
     </div>
   );
 };
