@@ -103,42 +103,7 @@ const Dashboard = () => {
         <div className="sticky top-0 z-10 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
           
         {/* Tabs Component */}
-        <div role="tablist" className="tabs tabs-bordered">
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className={tabClassName("tab1")}
-            aria-label="Starters"
-            onClick={() => handleTabChange("tab1")}
-          />
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className={tabClassName("tab2")}
-            aria-label="Main Course"
-            onClick={() => handleTabChange("tab2")}
-          />
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className={tabClassName("tab3")}
-            aria-label="Dessert"
-            onClick={() => handleTabChange("tab3")}
-          />
-          <input
-            type="radio"
-            name="my_tabs_1"
-            role="tab"
-            className={tabClassName("tab3")}
-            aria-label="Quick Bites"
-            onClick={() => handleTabChange("tab3")}
-          />
-
-          {renderTabContent(activeTab)}
-        </div>
+        
         {/* <div className="px-6 pt-6 overflow-y-auto 2xl:container">
           <div className="flex h-auto items-center justify-center rounded-xl">
             {menuData.map((item) => (

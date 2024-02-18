@@ -102,27 +102,28 @@ const CardGenerator = () => {
         itemData.map(data => (
           <div className="card-container">
             <animated.div
-              className="card m-4"
+              className="card m-8"
               style={cardSpring}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
 
-              <figure>
-                <img
-                  src={data.itemImage}
-                  alt="car!"
-                  className="img_product"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title text-black">{data.itemName}</h2>
-                <p className="text-black price">Rs {data.itemPrice}</p>
-                <p className="text-black price">{data.itemDesc}</p>
-                <div className="card-actions justify-end">
-                  <button onClick={() => addToCart({ id: data._id, name: data.itemName, price: data.itemPrice })} className="btn btn-primary">Add to Cart</button>
-                </div>
-              </div>
+            <figure className="product-image-container">
+            <img
+              src={data.itemImage}
+              alt="Product Image"
+              className="product-image"
+            />
+          </figure>
+          <div className="card-body1">
+            <h2 className="card-title">{data.itemName}</h2>
+            <p className="price">Rs {data.itemPrice}</p>
+            <p className="description">{data.itemDesc}</p>
+            <div className="card-actions">
+              <button onClick={() => addToCart({ id: data._id, name: data.itemName, price: data.itemPrice })} className="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          
             </animated.div>
           </div>
         ))

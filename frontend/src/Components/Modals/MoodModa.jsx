@@ -16,7 +16,7 @@ const ProductCard = () => {
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal" role="dialog">
         <div className="modal-box w-full max-w-6xl">
-          <h1 className="text-2xl text-center py-8 font-semibold tracking-tighter text-zinc-600 ">Select your mood</h1>
+          <h1 className="text-2xl text-center py-8 font-semibold tracking-tighter text-zinc-600 ">What's your mood today?</h1>
           <div className="grid gap-4 grid-cols-3 px-10">
             {mooddata.map((mood, index) => {
               return <Mood key={index} {...mood} />;

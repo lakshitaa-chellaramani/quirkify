@@ -1,12 +1,17 @@
 /* Card styling */
 
 .card-container {
-    background: url('https://img.freepik.com/free-photo/cupcakes-with-flowers-wood_23-2147693660.jpg?w=740&t=st=1708201340~exp=1708201940~hmac=cb65c38b3c954f8b5651362af96a76cf9f1fb8f058365596c1a6157bd9fad0e6');
-    background-size: cover;
+    
+    background: linear-gradient(hsl(0 0% 100% / 0.1),hsl(0 0% 100% / 0.1)), url('https://img.freepik.com/free-photo/rustic-wooden-background_24837-59.jpg?w=740&t=st=1708229171~exp=1708229771~hmac=20eb90e404976b846b0d6592e8b4dbfd9c4c48604b406809a0c3acd5d798dc84');
+    /* background-size: cover; */
+    background-attachment: fixed;
+
   }
   
   .card {
-    width: 300px;
+    /* width: 300px; */
+
+    width: auto;
     max-width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -20,11 +25,14 @@
   }
   
   .card figure {
+    
     margin: 0;
     overflow: hidden;
   }
   
   .card img {
+    border-radius: 0px;
+
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -35,9 +43,13 @@
     transform: scale(1.2); /* Scale up the image on hover */
   }
   
-  .card-body {
+  .card-body1 {
+    background-color: papayawhip ;    
+    box-shadow: #555;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.9); */
   }
   
   .card-title {
@@ -63,5 +75,63 @@
   
   .btn:hover {
     background-color: #2980b9;
+  }
+  .product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .card-body {
+    /* background-color: #fff; */
+    /* padding: 20px; */
+    background-color: aliceblue;    /* width: 300px; */
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    color: #000; /* Green color for price */
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .btn-primary {
+    background-color: #2196f3; /* Blue color for the button */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1565c0; /* Darker blue on hover */
   }
   

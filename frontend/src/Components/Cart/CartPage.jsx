@@ -220,7 +220,7 @@ const Cart = () => {
   }, []);
 
   const addToCart = (item) => {
-    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+    const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
@@ -235,39 +235,77 @@ const Cart = () => {
 
   const removeFromCart = (index) => {
     const updatedCart = [...cart];
-    if (updatedCart[index].quantity == 1) {
+    if (updatedCart[index].quantity === 1) {
       updatedCart.splice(index, 1);
-      setCart(updatedCart);
+    } else {
+      updatedCart[index].quantity -= 1;
     }
-    else {
-      updatedCart[index].quantity -= 1
-      setCart(updatedCart);
-    }
+    setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
   return (
-    <div>
-      <h2 style={{margin : "2rem", fontSize : "3rem" , color : "black"}}>Shopping Cart</h2>
-      <ul>
-        {cart.map((item, index) => (
-          <li style={{ fontSize: "2rem" }} key={index}>
-            <button style={{ marginRight: "20px", fontSize: "2rem", padding: "0 13px" }} onClick={() => removeFromCart(index)}>-</button>
-            {item.name} - {item.price} - Quantity: {item.quantity}
-            <button style={{ marginLeft: "20px", fontSize: "2rem", padding: "0 13px" }} onClick={() => addToCart({ id: 5, name: 'Ice-Cream', price: 40 })}>+</button>
-          </li>
+    <div className="h-screen bg-gray-100 pt-20">
+      <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+      <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+        {cart.map((element, index) => (
+          <div key={index} className="rounded-lg md:w-2/3">
+            <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+              <img
+                src={element.itemImage}
+                alt="product-image"
+                className="w-full rounded-lg sm:w-40"
+              />
+              <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                <div className="mt-5 sm:mt-0">
+                  <h2 className="text-lg font-bold text-gray-900">{element.name}</h2>
+                </div>
+                <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                  <div className="flex items-center border-gray-100">
+                    <span
+                      onClick={() => removeFromCart(index)}
+                      className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-lavender hover:text-blue-50"
+                    >
+                      {' '}
+                      -{' '}
+                    </span>
+                    <input
+                      className=" h-12 w-16 text-center text-black text-sm outline-none"
+                      type="number"
+                      value={element.quantity}
+                      min={"1"}
+                      readOnly
+                    />
+                    <span
+                      onClick={() => addToCart(element)}
+                      className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                    >
+                      {' '}
+                      +{' '}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <p className="text-sm">${(element.price * element.quantity).toFixed(2)}</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                      onClick={() => removeFromCart(index)}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         ))}
-        {
-          cart.length === 0 && <button style={{ padding: "10px 30px", fontSize: "20px" }} onClick={() => addToCart({ id: 5, name: 'Ice-Cream', price: 40 })}>Add Now</button>
-        }
-
-      </ul>
-
+      </div>
     </div>
   );
 };
 
 export default Cart;
-
-
-

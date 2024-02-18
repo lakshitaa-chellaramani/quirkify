@@ -35,7 +35,7 @@ function App() {
   return (
   
       <Router>
-      <Navbar />
+      <Navbar className="sticky"/>
       
         <Routes>
           <Route path='/' element={<Hero/>}/>
