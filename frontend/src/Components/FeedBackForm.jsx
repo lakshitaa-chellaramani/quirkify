@@ -38,7 +38,7 @@ const FeedbackForm = ({ onSubmit }) => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
-      <h1 className="text-3xl font-bold mb-4 text-center text-blue-500">Feedback Form</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-lavender">Feedback Form</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-600">Name:</label>
@@ -79,14 +79,14 @@ const FeedbackForm = ({ onSubmit }) => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 w-full"
+          className="bg-lavender text-white p-3 rounded-md hover:bg-[hsl(249,100%,70%)] w-full"
         >
           Submit Feedback
         </button>
         <div className="flex items-center">
             <button className="bg-babypink text-black p-3 rounded-md hover:bg-pink w-full"
             ><a href={twitterShareUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter" className="mr-2"> Share on Twitter
-              <svg className="h-6 w-6 text-blue-500 hover:text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 text-lavender hover:text-blue-700" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23 4.75a9.53 9.53 0 01-2.77.75 4.8 4.8 0 002.1-2.66 9.67 9.67 0 01-3.04 1.16 4.78 4.78 0 00-8.12 4.35 13.57 13.57 0 01-9.86-5 4.76 4.76 0 001.48 6.35A4.74 4.74 0 01.9 7.4v.05a4.76 4.76 0 003.82 4.66 4.75 4.75 0 01-2.15.08 4.77 4.77 0 004.45 3.3 9.57 9.57 0 01-5.9 2 9.73 9.73 0 01-1.12-.07 13.44 13.44 0 007.3 2.15c8.76 0 13.54-7.26 13.54-13.54 0-.21 0-.42-.02-.63a9.62 9.62 0 002.36-2.45z"/>
               </svg>
             </a>

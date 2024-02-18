@@ -18,6 +18,12 @@ import FeedbackForm from './Components/FeedBackForm';
 import Testimonials from './Components/Testimonials';
 import MoodModal from './Components/Modals/MoodModal';
 import ProductCard from './Components/Modals/MoodModa';
+import Location from './Components/Location';
+
+import Modalcom from './Components/EventCalendar/Modalcom';
+import Calender from './Components/EventCalendar/Calender';
+import LoginSignUp from './Components/Welcome/LoginSignUp';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,12 +32,21 @@ function App() {
   
       <Router>
       <Navbar />
-      <CardGenerator/>
-      <ProductCard/>
+      
         <Routes>
           <Route path='/' element={<Hero/>}/>
-          <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/login" element={<LoginSignUp/>} />
+          <Route path="/feedback" element={<FeedbackForm/>} />
+          <Route path="/testimonials" element={<Testimonials/>} />
+          <Route path="/location" element={<Location/>} />
+          <Route path="/locationmap" element={<LocationMap/>} />
+          <Route path="/homeproductcards" element={<HomeProductCards/>} />
+          <Route path="/modalcom" element={<Modalcom/>} />
+          {/* <Route path="/calender" element={<Calender/>} /> */}
+          <Route path="/productcard" element={<ProductCard/>} />
+          {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
 
         </Routes>
       </Router>

@@ -29,7 +29,7 @@ const CartPage = ({ cartItems }) => {
             </div>
             <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
               <div className="flex items-center border-gray-100">
-                <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
+                <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-lavender hover:text-blue-50">
                   {" "}
                   -{" "}
                 </span>
@@ -133,7 +133,7 @@ const CartPage = ({ cartItems }) => {
             <p className="text-sm text-gray-700">including VAT</p>
           </div>
         </div>
-        <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+        <button className="mt-6 w-full rounded-md bg-lavender py-1.5 font-medium text-blue-50 hover:bg-[hsl(249,100%,70%)]">
           Check out
         </button>
       </div>
