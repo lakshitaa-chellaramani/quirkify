@@ -10,6 +10,26 @@ const getStarters = async (req, res) => {
     }
 }
 
+const getVeg = async (req, res) => {
+    try {
+        var menu = await Item.find({ itemCategory: "veg" })
+        res.status(200).json({ menu })
+    }
+    catch (error) {
+        res.status(501).json({ message: error })
+    }
+}
+
+const getNonVeg = async (req, res) => {
+    try {
+        var menu = await Item.find({ itemCategory: "nonveg" })
+        res.status(200).json({ menu })
+    }
+    catch (error) {
+        res.status(501).json({ message: error })
+    }
+}
+
 const getMaincourse = async (req, res) => {
     try {
         var menu = await Item.find({ itemSubCategory: "main" })
@@ -248,4 +268,4 @@ const getDessertFilter = async (req, res) => {
     }
 }
 
-module.exports = { getStarters, getMaincourse, getDesserts, getQuickBites, getDessertFilter, getMaincourseFilter, getStartersFilter, getQuickbitesFilter }
+module.exports = { getStarters, getVeg, getNonVeg, getMaincourse, getDesserts, getQuickBites, getDessertFilter, getMaincourseFilter, getStartersFilter, getQuickbitesFilter }
