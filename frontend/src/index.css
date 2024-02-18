@@ -32,11 +32,12 @@ body {
 }
 .adminNavButton {
     position: relative;
+    isolation: isolate;
     overflow: hidden;
     &:after {
         content: '';
         position: absolute;
-        inset: -3rem;
+        inset: -3.3rem;
         background: #9381FF;
         z-index: -1;
         transform: skewY(35deg) translateY(-100%);
@@ -251,4 +252,27 @@ table button {
     background-color: grey;
     border: 2px solid grey;
     color: black;
+}
+.loginContainer {
+    width: min(768px,100% - 6rem);
+}
+.loginContainer > * {
+    width: 100%;
+}
+.underlineContainer {
+    overflow: hidden;
+}
+.underline {
+    transform: translateX(-100%);
+
+    animation: underlineAnimation 2s ease-out infinite;
+}
+
+@keyframes underlineAnimation {
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }

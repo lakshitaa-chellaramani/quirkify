@@ -20,8 +20,8 @@ const Hero = () => {
             <div>
               <h1 className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
                 The Mobile Food Hub!
-                <div className="relative inline-flex">
-                  <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#FFC72C]"></span>
+                <div className="underlineContainer relative inline-flex">
+                  <span className="underline absolute inset-x-0 bottom-0 border-b-[30px] border-lavender"></span>
                   <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
                     Quirkify.
                   </h1>
@@ -34,15 +34,7 @@ const Hero = () => {
               </p>
 
               <div className="mt-5 sm:flex sm:items-center sm:space-x-8 justify-center">
-                <button><a
-                  href="#"
-                  title=""
-                  className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-[#DA291C] hover:bg-[#e72e2e] rounded-[10px]"
-                  role="button"
-                >
-                  {" "}
-                  Start exploring{" "}
-                </a></button>
+                <button className='adminNavButton text-lg px-7 py-2 border-2 rounded-[0.25rem] border-[#9381FF] text-[#9381FF]'>Start Exploring</button>
               </div>
             </div>
 

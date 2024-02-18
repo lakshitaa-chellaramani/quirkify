@@ -47,7 +47,7 @@ function App() {
           {/* <Route path="/calender" element={<Calender/>} /> */}
           <Route path="/productcard" element={<ProductCard/>} />
           {/* <Route path="/eventCalendar" element={<EventCalendar/>} /> */}
-
+          <Route path="/admin" element={<Admin/>} />
         </Routes>
       </Router>
      
